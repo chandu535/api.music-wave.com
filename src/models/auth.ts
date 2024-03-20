@@ -44,4 +44,4 @@ authSchema.index(
   }
 );
 
-export const AuthModel = model("auth", authSchema, "categories");
+export const AuthModel = model("auth", authSchema, "users");
