@@ -24,3 +24,19 @@ export const signUpSchema = Joi.object({
     .messages(customErrorMessages),
   status: Joi.string().valid("ACTIVE", "INACTIVE").default("ACTIVE"),
 });
+
+export const signInWithEmailSchema = Joi.object({
+  email_or_username: Joi.string()
+    .email()
+    .required()
+    .messages(customErrorMessages),
+  password: Joi.string().min(6).required().messages(customErrorMessages),
+});
+
+export const signInWithUsernameSchema = Joi.object({
+  email_or_username: Joi.string()
+    .required()
+    .regex(/^[a-zA-Z0-9]*$/)
+    .messages(customErrorMessages),
+  password: Joi.string().min(6).required().messages(customErrorMessages),
+});
