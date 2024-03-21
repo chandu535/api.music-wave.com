@@ -120,7 +120,7 @@ export class AuthController {
       } else {
         user = await authService.getUserByUsername(email_or_username);
       }
-      console.log(1234, user);
+
 
       if (!(user && user?.length)) {
         return res.status(401).json({

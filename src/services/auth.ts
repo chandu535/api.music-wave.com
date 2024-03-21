@@ -23,12 +23,12 @@ export class AuthService {
     try {
       // Generate access token
       const accessToken = jwt.sign({ userId: user._id }, "accessTokenSecret", {
-        expiresIn: "15m",
+        expiresIn: "7d",
       });
 
       // Generate refresh token
       const refreshToken = jwt.sign({ userId: user._id }, "accessTokenSecret", {
-        expiresIn: "7d",
+        expiresIn: "90d",
       });
 
       return { accessToken, refreshToken };
