@@ -9,8 +9,6 @@ export class BrandsService {
     get_all = false,
   }: IGetAllBrandsPayload) {
     if (get_all) {
-      console.log("hitter");
-
       return await BrandsModel.find(query).sort({ title: 1 });
     }
     return await BrandsModel.find(query)
@@ -18,6 +16,7 @@ export class BrandsService {
       .skip(page)
       .limit(skip);
   }
+
   async getCategoriesCount({ query = {} }: { query: any }) {
     return await BrandsModel.countDocuments(query);
   }

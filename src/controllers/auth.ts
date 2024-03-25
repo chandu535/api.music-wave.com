@@ -27,7 +27,7 @@ export class AuthController {
       return hashedPassword;
     } catch (error) {
       return password;
-      throw new Error("Error hashing password");
+
     }
   }
 

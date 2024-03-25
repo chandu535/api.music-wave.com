@@ -22,8 +22,8 @@ export class CategoriesController {
       }
       const data = await categoryService.getAllCategories({
         query: query,
-        page: pageNumber,
-        skip: skip,
+        page: skip,
+        skip: limitNumber,
       });
 
       const categoriesCount = await categoryService.getCategoriesCount({

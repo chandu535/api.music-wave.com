@@ -20,8 +20,8 @@ export class BrandsController {
       }
       const data = await brandsService.getAllBrands({
         query: query,
-        page: pageNumber,
-        skip: skip,
+        page: skip,
+        skip: limitNumber,
         get_all: getAll,
       });
 
